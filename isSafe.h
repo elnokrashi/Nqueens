@@ -1,5 +1,10 @@
-#include <iostream>
+#define N 5 
+#include <stdbool.h> 
+#include <stdio.h> 
 
-using namespace std;
 
-bool isSafe(int, int, int);
+bool isSafe(int board[N][N], int row, int col);
+
+
+
+

@@ -1,23 +1,19 @@
 #include "isSafe.h"
 
-bool isSafe(int col, int row, int n) {
-  //check for same column
-    for (int i = 0; i < row; i++) {
-        if (grid[i][col]) {
-            return false;
-        }
-    }
-    //check for upper left diagonal
-    for (int i = row,j = col;i >= 0 && j >= 0; i--,j--) {
-        if (grid[i][j]) {
-            return false;
-        }
-    }
-    //check for upper right diagonal
-    for (int i = row, j = col; i >= 0 && j < n; j++, i--) {
-        if (grid[i][j]) {
-            return false;
-        }
-    }
-    return true;
-}
+
+bool isSafe(int board[N][N], int row, int col) 
+{ 
+    int i, j; 
+    for (i = 0; i < col; i++) 
+        if (board[row][i]) 
+            return false; 
+ 
+    for (i = row, j = col; i >= 0 && j >= 0; i--, j--) 
+        if (board[i][j]) 
+            return false; 
+    for (i = row, j = col; j >= 0 && i < N; i++, j--) 
+        if (board[i][j]) 
+            return false; 
+   
+    return true; 
+} 
